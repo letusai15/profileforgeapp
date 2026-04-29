@@ -13,23 +13,31 @@ import {
 } from 'lucide-react';
 import { generateBios, BioOption } from './lib/gemini';
 import Logo from "./Logo";
+import { useSettings } from './SettingsContext';
+import ApiKeyForm from './ApiKeyForm';
 
 export default function App() {
+  const { geminiKey, setGeminiKey } = useSettings();
   const [profileData, setProfileData] = useState('');
   const [careerGoals, setCareerGoals] = useState('');
   const [isGenerating, setIsGenerating] = useState(false);
   const [bios, setBios] = useState<BioOption[]>([]);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
 
+  if (!geminiKey) {
+    return <ApiKeyForm />;
+  }
+
   const handleGenerate = async () => {
     if (!profileData.trim()) return;
 
     setIsGenerating(true);
     try {
-      const results = await generateBios(profileData, careerGoals);
+      debugger
+      const results = await generateBios(profileData, careerGoals, geminiKey);
       setBios(results);
     } catch (error) {
-      console.error(error);
+      console.log(error);
       alert('Failed to generate bios. Please try again.');
     } finally {
       setIsGenerating(false);
@@ -54,20 +62,22 @@ export default function App() {
       <nav className="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-[#E5E7EB]">
         <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
           <div className="flex items-center gap-2">
-            {/* <div className="bg-[#0A66C2] p-1.5 rounded-sm">
-              <Linkedin className="w-5 h-5 text-white" />
-            </div> */}
-
-            <Logo />
-            {/* <span className="font-semibold tracking-tight text-lg hidden sm:block h-8">ProfileForge</span> */}
+            <Logo /></div>
+          <div className="flex gap-4">
+            <button
+              onClick={() => setGeminiKey('')}
+              className="text-xs font-medium uppercase tracking-widest text-[#86868B] hover:text-[#1D1D1F] transition-colors flex items-center gap-2"
+            >
+              Change API Key
+            </button>
+            <button
+              onClick={handleReset}
+              className="text-xs font-medium uppercase tracking-widest text-[#86868B] hover:text-[#1D1D1F] transition-colors flex items-center gap-2"
+            >
+              <RotateCcw className="w-3.5 h-3.5" />
+              Reset
+            </button>
           </div>
-          <button
-            onClick={handleReset}
-            className="text-xs font-medium uppercase tracking-widest text-[#86868B] hover:text-[#1D1D1F] transition-colors flex items-center gap-2"
-          >
-            <RotateCcw className="w-3.5 h-3.5" />
-            Reset
-          </button>
         </div>
       </nav>
 
@@ -230,15 +240,11 @@ export default function App() {
       <footer className="border-t border-[#E5E7EB] py-12 bg-white mt-12">
         <div className="max-w-5xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2 opacity-50">
-            {/* <Linkedin className="w-4 h-4" /> */}
             <span className="text-sm font-medium tracking-tight">Build Your About</span>
           </div>
-          {/* <div className="flex gap-8 text-[13px] font-medium text-[#86868B]">
-            <a href="#" className="hover:text-[#1D1D1F] transition-colors">Career Tips</a>
-            <a href="#" className="hover:text-[#1D1D1F] transition-colors">Privacy</a>
-            <a href="#" className="hover:text-[#1D1D1F] transition-colors">Support</a>
-          </div> */}
-          <p className="text-[13px] text-[#86868B]">© 2026: <a href="https://www.linkedin.com/in/dmonalisa" target="_blank" className="hover:text-[#1D1D1F] transition-colors">Monalisa Das</a></p>
+          <p className="text-[13px] text-[#86868B] flex flex-col md:flex-row items-center gap-2">© 2026:
+            <a href="https://www.linkedin.com/in/dmonalisa" target="_blank" className="flex items-center gap-2 hover:text-[#1D1D1F] transition-colors">
+              <Linkedin className="w-4 h-4" />Monalisa Das</a></p>
         </div>
       </footer>
     </div>

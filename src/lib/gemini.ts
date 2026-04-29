@@ -1,13 +1,12 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.GEMINI_API_KEY || "" });
-
 export interface BioOption {
   tone: string;
   content: string;
 }
 
-export async function generateBios(profileData: string, careerGoals: string): Promise<BioOption[]> {
+export async function generateBios(profileData: string, careerGoals: string, apiKey: string): Promise<BioOption[]> {
+  const ai = new GoogleGenAI({ apiKey: apiKey });
   const model = "gemini-3-flash-preview";
 
   const prompt = `
@@ -41,7 +40,7 @@ export async function generateBios(profileData: string, careerGoals: string): Pr
 
     return JSON.parse(text);
   } catch (error) {
-    console.error("Error generating bios:", error);
+    console.log("Error generating bios:", error);
     throw error;
   }
 }
