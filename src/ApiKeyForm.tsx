@@ -28,7 +28,7 @@ export default function ApiKeyForm() {
         </div>
 
         <h1 className="text-2xl font-semibold tracking-tight text-center mb-2">Welcome to ProfileForge</h1>
-        <p className="text-[#86868B] text-center mb-2 text-xs">Confused how to write in "About Me" session? Let me help you.</p>
+        <p className="text-[#86868B] text-center mb-2 text-xs">Confused over what to write in "About Me" section? Let me help you.</p>
         <p className="text-[#86868B] text-center mb-8">Please enter your Gemini API key to continue.</p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
