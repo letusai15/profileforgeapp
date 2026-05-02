@@ -30,6 +30,12 @@ The app has two sections which needs your input,
 
 - I always struggled with writing "About" when it comes to different platform. Ofcourse we have lot of plaforms now which can do it for us. But writing system prompts always would had been overhead. This app helped me removed thinking of what should be my system prompt and only focus on my details. In short, undivivded attention!
 
+# How will Profile Forge help you
+
+- Level: Beginner
+  - If you are in your learning path of integrating Vite React and OpenAI, Profile Forge will help you to draw the base
+- If you share the same struggle and are a non-coder, you have the solution ready-made.
+
 # You can Run and deploy your ProfileForge app 😇
 
 This contains everything you need to run your app locally.
@@ -42,3 +48,7 @@ This contains everything you need to run your app locally.
    `npm install`
 2. Run the app:
    `npm run dev`
+
+# Disclaimer
+
+- ChatGPT was my best friend in suggesting the App Name and Logo ❤️
