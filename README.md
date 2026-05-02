@@ -33,7 +33,7 @@ The app has two sections which needs your input,
 # How will Profile Forge help you
 
 - Level: Beginner
-  - If you are in your learning path of integrating Vite React and OpenAI, Profile Forge will help you to draw the base
+  - If you are in your learning path of integrating Vite React and Gemini library (you can use any other as well), Profile Forge will help you to draw the base
 - If you share the same struggle and are a non-coder, you have the solution ready-made.
 
 # You can Run and deploy your ProfileForge app 😇
