@@ -1,9 +1,11 @@
 # Profile Forge
 
-A very basic app to help you build a curated "About" for us which can be used in your CV, LinkedIn and so on. The system provides you with three types of "About",
+A very basic app to help you build a curated "About" which can be used in your CV, LinkedIn and so on. The system provides you with three different levels of "About",
 - Professional & Results-Driven
 - Storytelling & Personal Brand
 - Short & Punchy
+
+Choose as per what suits you best 😊
 
 ![](https://github.com/letusai15/profileforgeapp/blob/main/src/assets/logo/ProfileForgeDemo.gif)
 
@@ -26,7 +28,7 @@ The app has two sections which needs your input,
 
 # Story behind the app
 
-- I always struggled with writing "About" for me when it comes to different platform. Ofcourse we have lot of plaforms how which can do it for us. But writing system prompts always would had been overhead. This app helped me removed thinking of what should be my system prompt and only focus on my details.
+- I always struggled with writing "About" when it comes to different platform. Ofcourse we have lot of plaforms now which can do it for us. But writing system prompts always would had been overhead. This app helped me removed thinking of what should be my system prompt and only focus on my details. In short, undivivded attention!
 
 # You can Run and deploy your ProfileForge app 😇
 
