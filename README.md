@@ -1,11 +1,12 @@
 # Profile Forge
 
-A very basic app to help you build a curated "About" which can be used in your CV, LinkedIn and so on. The system provides you with three different levels of "About",
+Your goto buddy to help you build a curated "About" which can be used in your CV, LinkedIn and so on. The system provides you with three different levels of "About",
 - Professional & Results-Driven
 - Storytelling & Personal Brand
 - Short & Punchy
 
 Choose as per what suits you best 😊
+https://profileforgeapp.vercel.app/
 
 ![](https://github.com/letusai15/profileforgeapp/blob/main/src/assets/logo/ProfileForgeDemo.gif)
 
